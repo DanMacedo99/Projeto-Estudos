@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
     
     // Redirect agora também se chama Navigate
 
-import { Dashboard } from "../pages";
+import { Dashboard, Login } from "../pages";
 
 export const RoutesPath = () => {
     // para erros futuros altere RoutesPath para Routes
@@ -14,7 +14,7 @@ export const RoutesPath = () => {
         <BrowserRouter>
              <Routes>  {/* para erros futuros altere Routes para Switch */}
                 <Route path="/pagina-inicial" element={<Dashboard />} />
-                    
+                <Route path="/entrar" element={<Login />} />
                     {/* Dentro das tags routes não precisam mais da sintax exact  */}
                     {/* Ao criar o caminho de login fazer do mesmo modo como o pagina-inicial */}
 
