@@ -1,5 +1,6 @@
 import { useRef, useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { InputLogin } from "./components/InputLogin";
 //pela atualização do react-dom invés de useHistory utilizamos useNavigate
 
 export const Login = () => {
@@ -42,24 +43,36 @@ export const Login = () => {
 
             <div>
                 <form>
-                    <label>
+                    <InputLogin 
+                    label="Email"
+                    value={email}
+                    onChange={newValue => setEmail(newValue)}
+                    onPressEnter={() => inputPasswordRef.current?.focus()} />
+
+                    {/* <label>
                         <span>Email</span>
                         <input 
                         value={email}
                         onChange={evento => 
                         setEmail(evento.target.value)} 
                         onKeyDown={evento => evento.key === 'Enter' ? inputPasswordRef.current?.focus() : undefined} />
-                    </label>
+                    </label> */}
 
+                    <InputLogin
+                    type="password" 
+                    label="Senha"
+                    value={senha}
+                    onChange={newValue => setSenha(newValue)}
+                    />
 
-                    <label>
+                    {/* <label>
                         <span>Senha</span>
                         <input 
                         type="password" 
                         ref={inputPasswordRef} 
                         value={senha} 
                         onChange={evento => setSenha(evento.target.value)} />
-                    </label>
+                    </label> */}
 
 
                     <button type="button" onClick={handleEntrar}>
