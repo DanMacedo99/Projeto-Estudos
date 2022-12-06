@@ -1,9 +1,12 @@
 import { useRef, useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { useUsuarioLogado } from "../../shared/hooks";
+import { ButtonLogin } from "./components/ButtonLogin";
 import { InputLogin } from "./components/InputLogin";
 //pela atualização do react-dom invés de useHistory utilizamos useNavigate
 
 export const Login = () => {
+    const {nomeDoUsuario} = useUsuarioLogado();
     const inputPasswordRef = useRef<HTMLInputElement>(null);
 
     const [email, setEmail] = useState('');
@@ -39,6 +42,7 @@ export const Login = () => {
             
             <div>
             <button onClick={handleClick}>Página inicial</button>
+            <p>{nomeDoUsuario}</p>
             </div>
 
             <div>
@@ -75,9 +79,9 @@ export const Login = () => {
                     </label> */}
 
 
-                    <button type="button" onClick={handleEntrar}>
-                        <p>Entrar</p>
-                    </button>
+                    <ButtonLogin type="button" onClick={handleEntrar}>
+                        Entrar
+                    </ButtonLogin>
                 </form>
             </div>
         </div>

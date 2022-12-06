@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RoutesPath } from './app/routes';
-// para erros futuros altere RoutesPath para Routes
+import { App } from './app/App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,9 +8,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RoutesPath />
-    {/* para erros futuros altere RoutesPath para Routes */}
-
+    <App />
   </React.StrictMode>
 );
 
