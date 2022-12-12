@@ -1,10 +1,10 @@
 import { UsuarioLogadoProvider } from "./shared/contexts";
-import { RoutesPath } from "./routes";
+import { Routes } from "./routes";
 
 export const App = () => {
   return (
     <UsuarioLogadoProvider>
-      <RoutesPath />
+      <Routes />
     </UsuarioLogadoProvider>
   );
 }
